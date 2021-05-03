@@ -1,0 +1,30 @@
+﻿@model List<Member>
+<div class="row">
+@foreach (var member in Model)
+{
+    <div class="card col" style="width: 18rem;">
+        
+        <div class="card-body">
+            <h5 class="card-title">Member Name: @member.Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Id: @member.Id</h6>
+            <h6 class="card-subtitle mb-2 text-muted">DiscordId: @member.DiscordId</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Class: @member.Class</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Admission Number: @member.AdmissionNumber</h6>
+            <h6 class="card-subtitle mb-2 text-muted">WhatsApp: @member.WhatsApp</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Registered At: @member.RegisteredAt</h6>
+
+            @if (member.IsApproved)
+            {
+                <p class="card-text">Member was already approved.</p>
+                <a href="Member/Remove?id=@member.Id" class="btn btn-primary">Remove member</a>
+            }
+            else
+            {
+                <p class="card-text">Member is not approved.</p>
+                <a href="Member/Approve?id=@member.Id" class="btn btn-primary">Approve</a>
+            }
+        </div>
+    </div>
+}
+</div>
+

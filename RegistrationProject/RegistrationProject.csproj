@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>a516813b-b72d-4d6e-adc5-32b4d12bc3b9</UserSecretsId>
+	<IncludeAllContentForSelfExtract></IncludeAllContentForSelfExtract>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DSharpPlus" Version="4.0.0-rc2" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.0.0-rc2" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="4.0.0-rc2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1-beta1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.0-preview1" />
+  </ItemGroup>
+
+</Project>

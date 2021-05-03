@@ -1,0 +1,17 @@
+﻿@model RegistrationProject.Models.ViewModels.LoginViewModel 
+<section>
+    <form asp-controller="Auth" asp-action="Login" method="post">
+        <div asp-validation-summary="All" class="text-danger text-decoration-none bg-warning list-unstyled"></div>
+        <label asp-for="Email" class="pr-3"></label>
+        <div class="form-group form-inline justify-content-center">
+            <input class="form-control" asp-for="Email" />
+        </div>
+        <label asp-for="Password" class="pr-3"></label>
+        <div class="form-group form-inline justify-content-center">
+            <input class="form-control" asp-for="Password" />
+        </div>
+        <div class="form-group form-inline justify-content-center pb-1">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</section>
