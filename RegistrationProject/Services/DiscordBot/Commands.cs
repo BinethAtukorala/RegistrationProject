@@ -57,9 +57,9 @@ namespace RegistrationProject.Services.DiscordBot
                 return;
 
             }
-            await ctx.Member.SendMessageAsync("Your Class? (ex: 11-J)");
+            await ctx.Member.SendMessageAsync("Your Class? (ex: 11-J, 12-COM1)");
             string studentClass = (await interactivity.WaitForMessageAsync(x => x.Channel.IsPrivate && x.Author.Id == ctx.Member.Id, TimeSpan.FromMinutes(15))).Result.Content;
-            if(string.IsNullOrEmpty(studentClass) || studentClass.Length != 4 || studentClass[2] != '-')
+            if(string.IsNullOrEmpty(studentClass) || (studentClass.Length < 3 && studentClass.Length > 7 || !(studentClass[2] == '-' || studentClass[1] == '-'))
             {
                 await ctx.Member.SendMessageAsync("The class cannot be empty nor can it be not in the correct format (An example for the correct format :- ``11-J``). Please use the command again!");
                 return;
@@ -73,7 +73,7 @@ namespace RegistrationProject.Services.DiscordBot
                 return;
 
             }
-            await ctx.Member.SendMessageAsync("WhatsApp Number? (Optional) (type `null` if you do not wish to provide the number)");
+            await ctx.Member.SendMessageAsync("WhatsApp Number? (Optional, this is to add you to the RCCS Whatsapp Group and to share other announcements about the club.) (type `null` if you do not wish to provide the number)");
             string whatsapp = (await interactivity.WaitForMessageAsync(x => x.Channel.IsPrivate && x.Author.Id == ctx.Member.Id, TimeSpan.FromMinutes(15))).Result.Content;
             await ctx.Member.SendMessageAsync("Your request is pending approval. It may take upto a day for us to review your application.");
 
